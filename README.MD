@@ -3,37 +3,41 @@
 A Facebook Account Kit SDK wrapper for react-native.
 > We will support the latest version of React Native on each release. For older RN versions you may use an older version of this module compatible with that RN version.
 
-## Installation
-
+## Cài đặt
+> Thực hiện command để add vào dependencies
 ```bash
 npm install --save react-native-facebook-account-kit
 react-native link react-native-facebook-account-kit
 ```
+> Nếu bạn thích bản fork của tôi( thanhpcc96) có tùy chỉnh dành riêng cho VN
+```bash
+    yarn add https://github.com/thanhpcc96/react-native-facebook-account-kit.git
+```
 
-## Configuration
+## Cấu hình
 
-### For iOS
+### Cho iOS
 
-1. First, link the AccountKit SDK to your project following these steps
-  - Open with XCode your project
-  - Open with Finder the `node_modules/react-native-facebook-account-kit/ios` folder
-  - Drag and drop `AccountKit.framework` and `AccountKitStrings.bundle` from Finder to your project in XCode (**IMPORTANT**: select the **"Copy items if needed"** option)
+1. Đầu tiên, link the AccountKit SDK vào project vào project của bạn theo các bước như sau:
+  - Mở project với Xcode ( trong thư mục ios)
+  - Mở thư mục `node_modules/react-native-facebook-account-kit/ios` với Finder( MAC) hoặc Folder(Win)
+  - Kéo hoặc thả `AccountKit.framework` và `AccountKitStrings.bundle` từ Finder vào project trong Xcode (**Chú Ý Quan Trọng**: lựa chọn **"Copy items if needed"**)
 
-2. Add your Facebook credentials to your project's `Info.plist` file
+2. Thêm Facebook credentials vào trong file `Info.plist` 
   ```xml
       <plist version="1.0">
         <dict>
           ...
           <key>FacebookAppID</key>
-          <string>{your-app-id}</string>
+          <string>{Id-của-app}</string>
           <key>AccountKitClientToken</key>
-          <string>{your-account-kit-client-token}</string>
+          <string>{account-kit-client-token-của-bạn}</string>
           <key>CFBundleURLTypes</key>
           <array>
             <dict>
               <key>CFBundleURLSchemes</key>
               <array>
-                <string>ak{your-app-id}</string>
+                <string>ak{Id-của-app}</string>
               </array>
             </dict>
           </array>
@@ -41,7 +45,7 @@ react-native link react-native-facebook-account-kit
         </dict>
       </plist>
   ```
-3. Done! Now run your project from XCode or with `react-native run-ios` from your terminal
+3. Xong! Bây giờ bạn có thể chạy project trong Xcode hoặc `react-native run-ios` từ terminal
 
 This is the minimal required configuration. Take a look to the [Account Kit documentation for iOS](https://developers.facebook.com/docs/accountkit/ios) for a more detailed guide.
 
